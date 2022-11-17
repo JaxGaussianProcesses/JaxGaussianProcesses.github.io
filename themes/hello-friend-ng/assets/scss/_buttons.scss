@@ -53,16 +53,16 @@ a.button {
       border-color: $dark-background-secondary;
       color: inherit;
     }
-  
+
     @media (prefers-color-scheme: light) {
       border-color: $light-background-secondary;
     }
-  
+
     [data-theme=dark] & {
       border-color: $dark-background-secondary;
       color: inherit;
     }
-  
+
     [data-theme=light] & {
       border-color: $light-background-secondary;
     }
@@ -70,6 +70,7 @@ a.button {
     :hover {
       transform: none;
       box-shadow: none;
+      color: #b5121b;
     }
   }
 
@@ -122,16 +123,16 @@ a.button {
       background: $dark-background-secondary;
       color: inherit;
     }
-  
+
     @media (prefers-color-scheme: light) {
       background: $light-background-secondary;
     }
-  
+
     [data-theme=dark] & {
       background: $dark-background-secondary;
       color: inherit;
     }
-  
+
     [data-theme=light] & {
       background: $light-background-secondary;
     }
