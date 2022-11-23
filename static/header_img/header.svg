@@ -2267,7 +2267,7 @@ L 747.163636 78.929427
   .squiggle {
     stroke-dasharray: 800;
     stroke-dashoffset: 800;
-    animation: draw 5s linear forwards;
+    animation: draw 5s ease forwards infinite;
   }
 
   @keyframes draw {
