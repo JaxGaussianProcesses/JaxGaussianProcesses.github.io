@@ -1,4 +1,4 @@
-baseURL = "https://jaxgaussianprocesses.github.io/"
+baseURL = "https://jaxgaussianprocesses.com/"
 title   = "JAX Gaussian Processes"
 languageCode = "en-us"
 theme = "hello-friend-ng"
