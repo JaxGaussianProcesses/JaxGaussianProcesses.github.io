@@ -34,10 +34,10 @@ disable404     = false
 disableHugoGeneratorInject = false
 
 [permalinks]
-  posts = "/posts/:year/:month/:title/"
+  posts = "/posts/:title/"
 
 [author]
-  name = "Thomas Pinder & Daniel Dodd"
+  name = "Thomas Pinder and Daniel Dodd"
 
 [blackfriday]
   hrefTargetBlank = true
@@ -111,7 +111,7 @@ disableHugoGeneratorInject = false
   #
   [params.footer]
     trademark = true
-    rss = true
+    rss = false
     copyright = true
     author = true
 
@@ -120,6 +120,7 @@ disableHugoGeneratorInject = false
       "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
       "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
     ]
+    # bottomText = []
 
   # Colors for favicons
   #
@@ -178,22 +179,16 @@ disableHugoGeneratorInject = false
   #   name = "stackoverflow"
   #   url  = "https://www.stackoverflow.com/"
 
-[languages]
-  [languages.en]
-    subtitle  = "Hello Friend NG Theme"
-    weight    = 1
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-
-  [languages.fr]
-    subtitle  = "Hello Friend NG Theme"
-    weight    = 2
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-
 [menu]
   [[menu.main]]
     identifier = "about"
     name       = "About"
     url        = "about/"
+
+    [[menu.main]]
+    identifier = "contact"
+    name       = "Contact"
+    url        = "contact/"
   # [[menu.main]]
   #   identifier = "posts"
   #   name       = "Posts"
