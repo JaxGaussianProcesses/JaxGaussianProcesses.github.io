@@ -5,6 +5,28 @@ aliases = ["meeting-minutes"]
 name = "Hugo Authors"
 +++
 
+## 25h January 2022
+
+- Overview of `PyTree`s in Equinox
+  - Using the PyTree in Equinox will resolve performance issues in GPJax that Patrick highlighted
+  - Using the Equinox PyTree will allow us to _register_ the parameters as nodes in the tree.
+  - Operations would now be done on the PyTree itself, not directly on the parameters.
+  - Summary for changing:
+    - Branch on each module
+    - Kernels must be done first
+    - Losses must be defined outside of the model
+    - Delete params everywhere and update params
+- Decoupled sampling
+  - No point supporting the old RFF sampling
+  - Option 1 - have sampling functionality bolted onto model
+    - This is helpful as the sampling approach is coupled to the model e.g., GPR/SVGP
+  - Option 2 - Have a sampling module that takes in a model
+    - Nicer abstraction
+    - It's slightly less easy to use as it requires an extra step
+  - Option 3 - Have a truncated `Prior` object
+    - Might be a pain if you forget to truncate the prior and have optimised the model.
+  - Need to make sure that the decoupled sampling with a heteroscedastic likelihood is supported.
+
 ## 11th January 2022
 
 - Dependency structure

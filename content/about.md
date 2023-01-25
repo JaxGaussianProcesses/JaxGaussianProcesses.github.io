@@ -8,7 +8,20 @@ name = "Hugo Authors"
 
 The JAX Gaussian Processes organisation is managed by [Thomas Pinder](https://github.com/thomaspinder) and [Daniel Dodd](https://github.com/Daniel-Dodd). Within the organisation, we maintain the following packages and their primary owner:
 
-<!-- {{< hoverfig src="/logos/gpjax_logo_square.png" class="gallery" hoverText="Univariate Gaussian processes with modern sparse extensions" >}} -->
+<!-- {{< rawhtml >}}
+<div class = "image-container-parent">
+<div class="image-container">
+  <img src="/logos/gpjax_logo_square.png"  class="gallery_image">
+  <div class="image-text">Univariate Gaussian processes with modern sparse extensions.</div>
+</div>
+
+<div class="image-container">
+      <img src="/logos/jaxlinop/jaxlinop_logo_square.png"  class="gallery_image">
+  <div class="image-text">A family of JAX-based linear operators for efficient matrix operations.</div>
+</div>
+</div>
+{{< /rawhtml >}} -->
+
 
 
 | Package      | [Thomas Pinder](https://github.com/thomaspinder) | [Daniel Dodd](https://github.com/Daniel-Dodd) |

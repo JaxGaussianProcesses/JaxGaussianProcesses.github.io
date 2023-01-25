@@ -1,47 +1,76 @@
-.galleryContainer {
-    position: relative;
-    width: 100%;
-  }
+// .galleryContainer {
+//     width: 100%;
+//   }
 
-.gallery {
-    width: 25%;
-    height: 25%;
-    opacity: 1;
-    display: block;
-    backface-visibility: hidden;
-    transition: .5s ease;
+// .gallery {
+//     width: 25%;
+//     height: 25%;
+//     opacity: 1;
+//     display: block;
+//     backface-visibility: hidden;
+//     transition: .5s ease;
+//     float: left;
+// }
+
+// .middleGallery {
+//     float: left;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     width: 25%;
+//     height: 25%;
+//     opacity: 0;
+//     transition: .5s ease;
+//     text-align: center;
+//   }
+
+// .galleryContainer:hover .gallery {
+//     opacity: 0.2;
+// }
+
+// .galleryContainer:hover .middleGallery {
+//     opacity: 1;
+//   }
+
+// .text {
+//     position: absolute;
+//     background-color: #ffffff;
+//     color: #b5121b;
+//     font-size: 16px;
+//     padding: 8px 16px;
+//     top: 60%;
+// }
+
+// .galleryContainer:hover + .text { /* target the text element that is next to the hovered image */
+//   display: block; /* display the text when the image is hovered */
+// }
+
+.image-container{
+  position:relative;
+  flex: 1;
 }
 
-.middleGallery {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 25%;
-    height: 25%;
-    opacity: 0;
-    transition: .5s ease;
-    text-align: center;
-  }
-
-.galleryContainer:hover .gallery {
-    opacity: 0.2;
+.image-text {
+    display: none;
+    position: absolute; /* position the text over the image */
+    top: 50%; /* position the text vertically in the middle of the image */
+    left: 50%; /* position the text horizontally in the middle of the image */
+    transform: translate(-50%, -50%); /* adjust the position of the text to center it in the image */
+    text-align: center; /* center the text horizontally */
+    color: white; /* set the text color */
+    background-color: rgba(0, 0, 0, 0.5); /* set the background color of the text */
+    padding: 10px; /* add some padding to the text */
+    font-size: 1.25rem;
 }
 
-.galleryContainer:hover .middleGallery {
-    opacity: 1;
-  }
-
-.text {
-    background-color: #ffffff;
-    // border: 2px solid #b5121b;
-    // border-radius: 5pt;
-    color: #b5121b;
-    font-size: 16px;
-    padding: 8px 16px;
-    top: 60%;
-    position: absolute;
-    // left: 10%;
+.image-container:hover .image-text{
+    display:block;
 }
 
+
+
+.image-container-parent{
+  display: flex; /* use flex layout */
+}
