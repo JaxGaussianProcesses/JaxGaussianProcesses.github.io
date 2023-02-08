@@ -5,8 +5,22 @@ aliases = ["meeting-minutes"]
 name = "Hugo Authors"
 +++
 
+## 8th February 2022
+
+- Dan, Henry, Tom
+- Takeaways:
+  - Equinox-based API discussion 
+    - Move the bijectors and trainability objects inside the model - the user should not have to worry about these floating around
+    - Happy with the overall API that allows for natural JAX functions to be used, not Equinox functions
+    - Will begin transitioning JaxKern to use the new backend 
+      - Henry to refactor stationary kernels
+      - Tom all other kernels
+  - Looking to open up a line-of-work on heteroscedastic likelihood functions
+  - Henry to sketch out a framework for the decoupled sampling implementation.
+
 ## 25h January 2022
 
+- Dan, Henry, Tom
 - Overview of `PyTree`s in Equinox
   - Using the PyTree in Equinox will resolve performance issues in GPJax that Patrick highlighted
   - Using the Equinox PyTree will allow us to _register_ the parameters as nodes in the tree.
