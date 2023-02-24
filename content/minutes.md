@@ -5,6 +5,65 @@ aliases = ["meeting-minutes"]
 name = "Hugo Authors"
 +++
 
+## 22nd February 2022
+
+- Dan, Tom
+- GPJax Refactoring
+  - To remove
+    - `abstractions.py`
+      - Training loops to be moved into JaxUtils
+      - Should have an explicit training loop in a notebook. Probably regression
+    - `config.py`
+      - All parameters' config handled through the new
+      - jitter can be handled on the class
+    - `kernels.py`, `parameters.py`, `types.py`, `utils.py`
+  - To change
+    - `gps.py`,
+      - Perhaps restructure `AbstractPrior` and `AbstractPosterior` to be a common `GP` object.
+      - Biggest change will be the need for a `loss_functions` module
+      - `init_params` will go.
+      - `predict` and `__call__` will go.
+    - `likelihoods.py`, `mean_functions.py`
+      - Refactoring to be done here `__call__`
+    - `variational_families.py` and `variational_inference.py`
+      - Similar to `gps.py`
+  - Unchanged
+    - `gaussian_distribution.py`, `quadrature.py`
+      - Open an issue to say that it is not currently Equinox compatible but it is not an issue right now.
+  - To add
+    - `loss_functions.py`
+      - The individual loss fn will accept the posterior as input
+      - Return a fn that we can then pass into `fit`.
+    - 
+
+## 15th February 2022
+
+- Dan, Tom
+- Update on `JaxUtils` (Dan)
+  - Progress bar decorator removed.
+  - Replaced with `vscan` - verbose `scan` function that is a little safer and allows for more explicit messages to be printed to the terminal.
+  - A lot of work has gone into `module.py`
+    - Models can be built by subclassing `ju.Module`
+    - `ju.param` wraps any parameter that we wish to compute derivatives with respect to.
+      - Can attach transformations and trainability status to the parameters.
+- Wrapper class for Distrax/TFP bijectors
+  - Right now we can just pass in a bijector from Distrax/TFP and it will work. Nothing will break.
+  - The PyTree that is built within Distrax is suboptimal implementation.
+    - Quite fragile. For example, running a `vmap` over the distribution can break it.
+  - Proposed long-term solution would be to define our own bijectors and distributions. 
+  - Short-term we can leave things as they are.
+- Refactoring GPJax:
+  - Have an `objectives.py` that contains MLL, log-posterior, collapsed and uncollapsed ELBOs.
+- Takeaways:
+  - Add Priors into the parameter metadata (Dan)
+  - Schedule meeting with Patrick to review the `ju.Module` implementation (Dan)
+  - Begin a JaxUtils intro notebook (Dan)
+  - JaxKern refactoring (Tom)
+  - ARD bug in kernel (Tom)
+  - Begin refactoring the docs TOC (Tom)
+  - Discuss next week the GPJax v0.6 release 
+
+
 ## 8th February 2022
 
 - Dan, Henry, Tom
