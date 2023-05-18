@@ -5,7 +5,40 @@ aliases = ["meeting-minutes"]
 name = "Hugo Authors"
 +++
 
-## 22nd February 2022
+## 18th May 2023
+
+- Dan, Tom, Henry, and Francesco.
+- Moving towards v1
+  - Nitty gritty tasks
+    - Clean up LinOps
+      - More tests should be added to ensure that LinOps is working as expected.
+      - Once this is done, we can add functionality to define arithmetic operations between LinOps. 
+    - Add the ability to attach priors to the `PyTree` object
+      - We currently support bijectors and the trainability status to be attached to a parameter. The only thing missing is the ability to attach a prior distribution to a parameter.
+        - Considerations should be made to ensure that the prior is defined on the correct space. 
+    - Representation of the PyTree
+      - Not a hard need, but it would be helpful to have a way of printing the PyTree out in the terminal with the parameters' value, bijector, trainability status, and prior distribution. Similar to how [PyTreeClass](https://github.com/ASEM000/PyTreeClass) does it.
+  - Operator kernels (Henry)
+    - Focussed around equation discovery
+    - End result will be some cool notebooks
+    - Long-term, using GP to discover these operator
+  - Non-stationary kernels (Francesco)
+    - Spectral approximations for decoupled sampling
+  - Generalise out the decoupled sampler (Dan)
+    - Abstract out the sampler
+    - Once the abstraction has been done, look into using other approximations within the sampler.
+    - Tentative idea, have the ApproximateSampler return a Prior/Posterior GP whose methods are identical to its exact analogue.
+  - Conjugate gradients in GPJax (Tom)
+    - Want to have something that supports Float32
+    - Also ties into the decoupled sampler routine as another prior approximation
+    - Long-term, it'd be nice to tie this into probabilistic numerics e.g., iterGP.
+  - Variational expectation abstractions (Tom)
+    - Currently we use quadrature everywhere
+    - For Gaussian likelihoods, the integral can be done analytically
+    - We should abstract out this logic and supply it to the ELBO.
+
+
+## 22nd February 2023
 
 - Dan, Tom
 - GPJax Refactoring
@@ -36,7 +69,7 @@ name = "Hugo Authors"
       - Return a fn that we can then pass into `fit`.
     - 
 
-## 15th February 2022
+## 15th February 2023
 
 - Dan, Tom
 - Update on `JaxUtils` (Dan)
@@ -64,7 +97,7 @@ name = "Hugo Authors"
   - Discuss next week the GPJax v0.6 release 
 
 
-## 8th February 2022
+## 8th February 2023
 
 - Dan, Henry, Tom
 - Takeaways:
@@ -77,7 +110,7 @@ name = "Hugo Authors"
   - Looking to open up a line-of-work on heteroscedastic likelihood functions
   - Henry to sketch out a framework for the decoupled sampling implementation.
 
-## 25h January 2022
+## 25h January 2023
 
 - Dan, Henry, Tom
 - Overview of `PyTree`s in Equinox
@@ -100,7 +133,7 @@ name = "Hugo Authors"
     - Might be a pain if you forget to truncate the prior and have optimised the model.
   - Need to make sure that the decoupled sampling with a heteroscedastic likelihood is supported.
 
-## 11th January 2022
+## 11th January 2023
 
 - Dependency structure
   - Create a DAG diagram

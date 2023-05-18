@@ -181,9 +181,9 @@ disableHugoGeneratorInject = false
 
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "about/"
+    identifier = "docs"
+    name       = "Documentation"
+    url        = "https://docs.jaxgaussianprocesses.com/"
     weight = 10
 
     [[menu.main]]
